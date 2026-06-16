@@ -43,7 +43,7 @@ make render                                 # rebuild index.html
 > Sync is **one-way (workshop → lecture)**. Don't hand-edit the synced slide files
 > here — the next `make sync` will overwrite them. Only this repo's own files
 > (`_quarto.yml`, `_slides-home-btn.html`, `README.md`, `Makefile`, `sync.sh`,
-> `.gitignore`) are preserved.
+> `watch.sh`, `.gitignore`) are preserved.
 
 `sync.sh` copies the active chapters, re-derives every referenced asset
 (`img/ data/ js/`), and refreshes the `clean-revealjs` extension and the `_freeze/`
@@ -54,6 +54,22 @@ cache. It is **non-destructive to this repo's own files** (`_quarto.yml`,
 > `_freeze/` cache. For a fix to appear here, the **workshop repo must re-render that
 > cell first**; then `make sync` carries the updated figure across. (No Python or
 > `tvbo` install is needed in *this* repo.)
+
+### Auto-sync while you work
+
+One command runs the syncer **and** the preview together:
+
+```bash
+make dev        # watch the workshop repo + live preview; Ctrl-C stops both
+```
+
+Editing in the workshop repo then flows through automatically: **watch → sync →
+preview reload**. (Prefer two terminals? Run `make watch` and `make preview`
+separately — `make preview` on its own only watches *this* repo's files.)
+
+It polls every 2 s; `brew install fswatch` upgrades it to instant, event-based
+watching. Code-generated figures still need the workshop repo to re-render that
+cell first — see the note above.
 
 ## Layout
 

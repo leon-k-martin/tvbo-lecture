@@ -682,3 +682,4 @@ auditory marked on the axes. (`onset` shifts the waveform past the burn-in trans
 the recorded window.)
 Same hook takes speech, an empirical EEG/LFP trace, or a measured TMS/DBS pulse train.
 :::
+

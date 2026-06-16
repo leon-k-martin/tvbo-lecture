@@ -4,7 +4,7 @@ SRC ?= ../tvb-ontology-optim-workshop
 
 .DEFAULT_GOAL := help
 
-.PHONY: help sync render preview all clean
+.PHONY: help sync watch render preview dev all clean
 
 help:  ## Show this help
 	@grep -E '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | \
@@ -13,10 +13,20 @@ help:  ## Show this help
 sync:  ## Pull slides + materials from the workshop repo (override: make sync SRC=/path)
 	SRC="$(SRC)" ./sync.sh
 
+watch:  ## Auto-sync on every workshop-repo change (run alongside `make preview`)
+	SRC="$(SRC)" ./watch.sh
+
 render:  ## Render the deck -> index.html (uses the _freeze cache, no Python needed)
 	quarto render
 
-preview:  ## Live-reloading preview
+preview:  ## Live-reloading preview (this repo's files only)
+	quarto preview
+
+dev:  ## Auto-sync + live preview in ONE command (Ctrl-C stops both)
+	@echo "watch + preview — edit the workshop repo and it flows through here. Ctrl-C to stop."
+	@SRC="$(SRC)" ./watch.sh & \
+	wpid=$$!; \
+	trap 'kill $$wpid 2>/dev/null' EXIT INT TERM; \
 	quarto preview
 
 all: sync render  ## Sync from the workshop repo, then render

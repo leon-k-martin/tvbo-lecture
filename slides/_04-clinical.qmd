@@ -164,7 +164,7 @@ display(SVG(dot.pipe(format="svg").decode("utf-8")))
 - Counts = distinct, PubMed-verified applications; model leaves read from each study's full text
 - **Most areas = neural-mass / mean-field:** Epileptor (epilepsy) · Jansen-Rit + Reduced Wong-Wang / dynamic mean-field (Alzheimer's) · Stefánescu-Jirsa 3D (stroke) · Dody next-gen mass (Parkinson's) · DCM canonical microcircuit (schizophrenia)
 - **Two step outside that family:** Hopf / Stuart-Landau oscillator (schizophrenia perturbation) · spiking E/I network (Alzheimer's 1/f marker)
-- **Note:** Alzheimer's (11) is essentially level with epilepsy (12)
+- **Note:** Alzheimer's (12) is now level with epilepsy (12)
 :::
 
 ## Epilepsy — the Virtual Epileptic Patient {.smaller .cards-slide}
@@ -303,7 +303,7 @@ Generates and evaluates a virtual epilepsy patient cohort using personalized who
 
 ## Alzheimer's disease & dementia {.smaller .cards-slide}
 
-**ICD-11 8A20 · MeSH Alzheimer Disease · 11 dynamical-model applications**
+**ICD-11 8A20 · MeSH Alzheimer Disease · 12 dynamical-model applications**
 
 ::::: {.cards .fill style="--cols:4; --cardw:1fr; --rowh:175px"}
 :::: {.card}
@@ -388,6 +388,15 @@ A whole-brain dynamic model shows amyloid-β dominates early (MCI), tau dominate
 :::
 ::::
 :::: {.card}
+![](img/figures/clinical/CabreraAlvarez2024.jpg){.cardimg}
+
+::: {.cardbody}
+**Cabrera-Álvarez 2024** · [Jansen-Rit]{.mdl}
+
+Closed-loop heterodimer model couples Aβ/tau spread to a Jansen-Rit network; inhibition changes (mainly Aβ) drive AD functional-connectivity alterations [@CabreraAlvarez2024]
+:::
+::::
+:::: {.card}
 ![](img/figures/clinical/Amato2024.jpg){.cardimg}
 
 ::: {.cardbody}
@@ -408,7 +417,7 @@ Brain digital twins + non-invasive recordings enable early diagnosis of Alzheime
 :::::
 
 ::: {.notes}
-**Now essentially level with epilepsy — 11 applications; branches by mechanism & modality.**
+**Now level with epilepsy — 12 applications; branches by mechanism & modality.**
 
 - **Penny 2018** · DCM/Jansen-Rit — EEG in presymptomatic PSEN1 carriers; connectivity predicts later MMSE
 - **Zimmermann 2018** · Reduced Wong-Wang — TVB across 124 (aging→MCI→AD); params beat the empirical connectome at predicting cognition
@@ -419,6 +428,7 @@ Brain digital twins + non-invasive recordings enable early diagnosis of Alzheime
 - **Triebkorn 2022** — PET/MRI + TVB-simulated LFPs lift ML classification ~10%
 - **Martínez-Cañada 2023** · spiking LIF — 1/f EEG/MEG slopes infer regional E/I abnormalities
 - **Patow 2023** · dynamic mean-field — disentangles amyloid (early MCI) vs tau (later AD)
+- **Cabrera-Álvarez 2024** · Jansen-Rit — closed-loop heterodimer Aβ/tau spread ↔ network; inhibition (mainly Aβ) drives FC changes; decouples cellular hyperactivity from interregional hypersynchrony
 - **Amato 2024** · Jansen-Rit — EEG digital twin separates MCI from healthy, flags CSF hallmarks
 - **Amato 2025** · DADD twin — scales to 124: 88% accuracy for CSF-positive, 87% predicting conversion
 
@@ -745,7 +755,7 @@ Computational modeling of OCD patient data identifies frontostriatal-coupling in
 </style>
 
 ::: {.bl-stats}
-1 recipe · 11 diseases · 40 model applications
+1 recipe · 11 diseases · 41 model applications
 :::
 
 ::: {.bl-claim}
