@@ -1,0 +1,110 @@
+---
+title: "Introduction to TVB modeling framework and The Virtual Brain Ontology for reproducible and comparable computational modeling"
+subtitle: "Summer School 2026"
+date: today
+authors:
+  - name: "Leon Martin"
+affiliations:
+  - id: 1
+    name: "Charité University Medicine Berlin · Berlin Institute of Health"
+format:
+  clean-revealjs:
+    width: 1244
+    height: 750
+    dpi: 500
+    fig-dpi: 500
+    slide-number: true
+    scrollable: true
+    auto-stretch: true
+    auto-play-media: true
+    chalkboard: true
+    incremental: false
+    toc: false
+    logo: img/Charite.png
+    footer: "© Leon Martin · Charité University Medicine Berlin"
+    link-external-newwindow: true
+    code-line-numbers: true
+    highlight-style: github
+    include-in-header: _slides-home-btn.html
+    css: slides.css
+    title-slide-attributes:
+      data-background-iframe: brain-network-background.html
+      data-background-color: "#6880af"
+      data-background-opacity: "1"
+engine: jupyter
+jupyter: python3
+---
+
+**Overview**:
+
+- **Intro to Brain Network Modelling** — connectomes, local dynamics, coupling
+- **Defining a FAIR Brain Network Model** — ontology-backed specs with TVB-O
+- **Setup & First Examples** — a runnable environment
+- **Bifurcation Analysis** — reading the dynamics as a map of regimes
+- **Stimulating the Brain** — evoked responses & parameter inference
+
+{{< include slides/_01-intro.qmd >}}
+
+{{< include slides/_02-fair-model.qmd >}}
+
+<!-- {{< include slides/_03-setup.qmd >}} -->
+
+{{< include slides/_04-clinical.qmd >}}
+
+{{< include slides/_05-bifurcation.qmd >}}
+
+<!-- Parameter Exploration & Inference — not part of this course.
+     Uncomment the next line to add it back. -->
+<!-- {{< include slides/_06-parameter-exploration.qmd >}} -->
+
+{{< include slides/_07-stimulation.qmd >}}
+
+
+# Wrap-up {background-color="#6880af"}
+
+## Putting it together {.unnumbered}
+
+One reproducible workflow, from structure to mechanism:
+
+**connectome → local dynamics → coupling → regimes → fitting → stimulation**
+
+::: {.incremental}
+- A brain network model = structure ($A_{ij},\ \tau_{ij}$) · local dynamics $f$ · coupling $g$ · observation $h$
+- **TVB-O** captures all of it as FAIR, machine-readable metadata — reproducible *and* comparable
+- **Bifurcation analysis** identifies the dynamical regime *before* you fit
+- **Inference & stimulation** turn the model into testable, mechanistic hypotheses
+:::
+
+## Acknowledgements
+
+::: {.r-stretch}
+{{< include authors_gallery.qmd >}}
+:::
+
+## Thank You & Feedback {.r-fit-text}
+
+::::{.rows}
+:::{.row}
+![Your Feedback](img/survey_qr.png){fig-align=center height=200px}
+:::
+
+:::{.row}
+::: {style="text-align: center;"}
+**Leon Martin**\
+leon.martin [at] bih-charite.de
+:::
+:::
+
+:::{.row}
+| ![](img/Charite.png){fig-alt="Charite logo" width=30%} | ![](img/BIH.png){fig-alt="BIH logo" width=30%} | ![](img/BSS.png){fig-alt="BSS logo" width=30%} |
+|:---:|:---:|:---:|
+:::
+
+::::
+
+## References {.unnumbered}
+
+::: {#refs}
+:::
+
+## {.unnumbered}

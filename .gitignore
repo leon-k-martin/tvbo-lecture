@@ -1,0 +1,26 @@
+# ---------------------------------------------------------------------------
+# Quarto build artifacts (the deck is rendered from source + the _freeze cache,
+# so the rendered output is NOT committed). The _freeze/ cache IS committed.
+# ---------------------------------------------------------------------------
+/.quarto/
+/index.html
+/index_files/
+/mathjax-config.js
+/_site/
+/.luarc.json
+
+# ---------------------------------------------------------------------------
+# OS / editor cruft
+# ---------------------------------------------------------------------------
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
